@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Digital Rezky</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+   .kartu {
+      background: white;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    h1 { color: #764ba2; font-size: 22px; margin-bottom: 5px; }
+   .nama { font-size: 28px; color: #667eea; font-weight: bold; margin: 15px 0; }
+   .tanggal { background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 20px 0; }
+   .qr-box { 
+      margin: 25px 0; 
+      padding: 15px;
+      border: 2px dashed #667eea;
+      border-radius: 10px;
+    }
+   .qr-box img { width: 200px; height: 200px; }
+   .qr-text { font-size: 12px; color: #666; margin-top: 10px; }
+    button {
+      background: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+   .footer { font-size: 12px; color: #999; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="kartu">
+    <h1>Undangan Tasyakuran</h1>
+    <p>Atas kelulusan SMK & mulai freelance</p>
+    
+    <div class="nama">Rezky Pratama</div>
+    
+    <div class="tanggal">
+      <b>Sabtu, 15 November 2026</b><br>
+      Pukul 19.00 WIB - Selesai<br>
+      Kp. Ciburial RT 02/03, Leuwisari
+    </div>
+
+    <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir</p>
+    
+    <!-- BAGIAN QR CODE OTOMATIS -->
+    <div class="qr-box">
+      <b>Scan untuk Buka Maps:</b><br>
+      <img id="qrCode" src="" alt="QR Code Lokasi">
+      <div class="qr-text">Arahkan kamera HP ke QR ini</div>
+    </div>
+
+    <button onclick="bukaWA()">Konfirmasi Hadir via WhatsApp</button>
+    
+    <div class="footer">Made with ❤️ by Rezky | Anak MPLB Bisa Ngoding</div>
+  </div>
+
+  <script>
+    let namaAcara = "Tasyakuran Rezky";
+    let linkLokasi = "https://maps.app.goo.gl/y1wZRQGvNMsRJKLt9?g_st=aw";
+    let noWA = "6283130542386";
+    
+    document.getElementById("qrCode").src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(linkLokasi);
+    
+    function bukaWA() {
+    let pesan = "Halo, saya mau konfirmasi hadir untuk acara " + namaAcara;
+    window.open("https://wa.me/" + noWA + "?text=" + encodeURIComponent(pesan));
+  }
