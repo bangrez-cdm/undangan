@@ -60,11 +60,11 @@
     <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir</p>
     
     <!-- BAGIAN QR CODE OTOMATIS -->
-    <div class="qr-box">
-      <b>Scan untuk Buka Maps:</b><br>
-      <img id="qrCode" src="" alt="QR Code Lokasi" style="border-radius: 8px; width: 200px; height: 200px;">
-      <div class="qr-text">Arahkan kamera HP ke QR ini</div>
-    </div>
+     <div class="qr-box">
+     <b>Scan untuk Buka Maps:</b><br>
+     <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fmaps.app.goo.gl%2Fy1wZRQ6vNMsRJKLt9" alt="QR Code Lokasi" style="border-radius: 8px; width: 200px; height: 200px; margin: 10px 0;">
+     <div class="qr-text">Arahkan kamera HP ke QR ini</div>
+   </div>
 
     <button onclick="bukaWA()">Konfirmasi Hadir via WhatsApp</button>
     
@@ -75,8 +75,7 @@
     let namaAcara = "Tasyakuran Rezky";
     let linkLokasi = "https://maps.app.goo.gl/y1wZRQGvNMsRJKLt9?g_st=aw";
     let noWA = "6283130542386";
-    
-    document.getElementById("qrCode").src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(linkLokasi);
+
     
     function bukaWA() {
     let pesan = "Halo, saya mau konfirmasi hadir untuk acara " + namaAcara;
